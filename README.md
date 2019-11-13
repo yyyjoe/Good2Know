@@ -13,11 +13,11 @@ python3 post_scrawler_private.py -u `<username>` -p `<password>` -i `<input_file
 
 Header  | user_name
 ------------- | -------------
-| XXXXXXXX
+&nbsp; | XXXXXXXX
 
 ### output
 #### post.csv
 
 Header  | user_name | text
-------------- | -------------
-| XXXXXXXX | XXXXXXX
+------------- | ------------- | -------------
+&nbsp; | XXXXXXXX | XXXXXXX
