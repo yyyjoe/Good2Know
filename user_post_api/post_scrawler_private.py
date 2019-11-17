@@ -19,7 +19,6 @@ except ImportError:
 		Client, __version__ as client_version)
 
 
-
 class MyClient(webClient):
 	@staticmethod
 	def _extract_rhx_gis(html):
@@ -46,7 +45,6 @@ def process_posts(posts):
 			continue
 			# print('This text cannot be differentiated.')
 
-		# text_list.append(re.sub(r'[^a-zA-Z]+', ' ', post['caption']['text'], re.ASCII))
 		if lang == 'en':
 			text_list.append(post['caption']['text'])
 
@@ -84,7 +82,6 @@ def main():
 	process_bar = [0, 0.25, 0.5, 0.75, 1]
 
 	for index, row in df.iterrows():
-		process_rate = 0
 		process_idx = 0
 
 		# get user info
@@ -116,10 +113,23 @@ def main():
 		print('Processing username = "' + row['user_name'] + '" '+ '%.2f' % (100 * len(text_list) / user_post_count) + '%')
 		
 		new_df = new_df.append({'user_id': user_id, 'user_name': row['user_name'], 'text': '\n'.join(text_list)}, ignore_index=True)
-		# break
+
+	# new_df.to_csv(args.outputfile)
+
+	emoji_pattern = re.compile(u"(["                     # .* removed
+u"\U0001F600-\U0001F64F"  # emoticons
+u"\U0001F300-\U0001F5FF"  # symbols & pictographs
+u"\U0001F680-\U0001F6FF"  # transport & map symbols
+u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
+                "])", flags= re.UNICODE) 
+
+	# df = pd.read_csv(args.outputfile)
+	for index, row in new_df.iterrows():
+		row['text'] = re.sub(r'[^a-zA-Z]+', ' ', row['text'], re.ASCII)
+		row['text'] = emoji_pattern.sub(u'', row['text'])
+
 
 	new_df.to_csv(args.outputfile)
-
 
 if __name__ == "__main__":
 	main()
