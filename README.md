@@ -6,6 +6,9 @@
 - [langdetect](https://github.com/Mimino666/langdetect "langdetect")
 
 ### Usage:
+
+python3 post_scrawler_public.py -i `<input_file_path>` -o `<output_file_path>` -p `<post_count>`
+
 python3 post_scrawler_private.py -u `<username>` -p `<password>` -i `<input_file_path>` -o `<output_file_path>`
 
 ## CSV Tables
