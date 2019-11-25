@@ -23,6 +23,6 @@ Header  | user_name
 ### Output
 #### post.csv
 
-Header  | user_name | text
-------------- | ------------- | -------------
-&nbsp; | XXXXXXXX | XXXXXXX
+Header  | user_id | user_name | user_img_url | followed_by | post_count | text 
+------------- | ------------- | ------------- | ------------- | ------------- | ------------- | -------------
+&nbsp; | XXXXXXXX | XXXXXXXX | XXXXXXX | XXXXXXX | XXXXXXX | XXXXXXXX 
