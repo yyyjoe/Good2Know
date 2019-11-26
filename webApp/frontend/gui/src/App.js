@@ -35,7 +35,7 @@ class App extends Component {
           posts: response.data.posts,
           topics : {
             labels : response.data.topics.labels.slice(0, 6),
-            data : response.data.topics.labels.slice(0, 6),
+            data : response.data.topics.data.slice(0, 6),
           }
         })
 
