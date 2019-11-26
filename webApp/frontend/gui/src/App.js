@@ -5,7 +5,7 @@ import Header from './header'
 import data from './dataStore'
 
 const axios = require('axios');
-const url = "http://localhost:8000/Good2Know/?user_id=buzzfeedtasty";
+const url = "http://localhost:8000/Good2Know/?user_id=";
 
 class App extends Component {
   constructor(props) {
@@ -25,17 +25,17 @@ class App extends Component {
   }
 
   getPosts = () => {
-    axios.get(url)
+    axios.get(url + this.state.userID)
       .then((response) => {
         // handle success
         // const titles = response.data.map(data => data.title)
-        var myObject = JSON.parse(response.data)
-        console.log(myObject);
+        //var myObject = JSON.parse(response.data)
+        console.log(response.data);
         this.setState({
-          posts: data.posts,
+          posts: response.data.posts,
           topics : {
-            labels : data.topics.labels,
-            data : data.topics.labels,
+            labels : response.data.topics.labels.slice(0, 6),
+            data : response.data.topics.labels.slice(0, 6),
           }
         })
 

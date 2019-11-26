@@ -6,7 +6,7 @@ import Chart from './chart'
 
 const style = {
     PaperLeft: { padding: 10, marginTop: 10, marginBottom: 10, height: "100%", width : "100%" },
-    PaperRight: { padding: 10, marginTop: 10, marginBottom: 10,  height: "100%", overflow : 'auto', width : "100%" },
+    PaperRight: { padding: 10, marginTop: 10, marginBottom: 10,  height: 900, overflow : 'auto', width : "100%" },
 }
 
 class MainFunction extends Component {
