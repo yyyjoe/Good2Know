@@ -9,7 +9,8 @@ from gensim import corpora, models
 import math
 import os
 import json
-
+import nltk
+# nltk.download('wordnet', "/Users/jeff/nltk_data")
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -17,6 +18,7 @@ NUM_TOPICS=10
 
 class LDA(object):
     def __init__(self):
+        nltk.download('wordnet')
         LAD_DIR = os.path.join(BASE_DIR,"Good2Know/LDA_models/lda_model.pkl")
         self.lda_model_tfidf = models.LdaModel.load(LAD_DIR)
 
@@ -27,7 +29,7 @@ class LDA(object):
         self.NUM_TOPICS=10
         
         #DIC_DIR = os.path.join(BASE_DIR,"Good2Know/LDA_models/dataframe.csv")
-        DIC_DIR = "/Users/joe/Desktop/output.csv"
+        DIC_DIR = "/Users/jeff/Desktop/output.csv"
         self.db = pd.read_csv(DIC_DIR)
 
     # # Define stemmer and Process

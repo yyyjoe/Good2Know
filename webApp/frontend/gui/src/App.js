@@ -29,7 +29,8 @@ class App extends Component {
       .then((response) => {
         // handle success
         // const titles = response.data.map(data => data.title)
-        // console.log(titles);
+        var myObject = JSON.parse(response.data)
+        console.log(myObject);
         this.setState({
           posts: data.posts,
           topics : {
