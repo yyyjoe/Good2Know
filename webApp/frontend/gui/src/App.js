@@ -5,7 +5,7 @@ import Header from './header'
 import data from './dataStore'
 
 const axios = require('axios');
-const url = "http://127.0.0.1:8000/api/";
+const url = "http://localhost:8000/Good2Know/?user_id=buzzfeedtasty";
 
 class App extends Component {
   constructor(props) {
