@@ -60,7 +60,7 @@ class LDA(object):
                 "num_topics": self.NUM_TOPICS,
                 "topics": {
                     "labels":[],
-                    "posts":[],
+                    "data":[],
                 },
                 "posts": [],
             }
