@@ -4,7 +4,7 @@ import RecipeReviewCard from './post'
 
 
 export default (posts) => {
-    console.log(posts)
+    // console.log(posts)
     return (
         <Grid container  style={{width : "100%"}}>
             {
@@ -15,6 +15,7 @@ export default (posts) => {
                             date={post.date}
                             imgURL={post.imgURL}
                             text={post.text}
+                            like={post.like}
                         />
                     )
                 })

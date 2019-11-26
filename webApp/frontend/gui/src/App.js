@@ -12,7 +12,10 @@ class App extends Component {
     super(props);
     this.state = {
       userID: "",
-      topics: [],
+      topics: {
+        labels : [],
+        data : [],
+      },
       posts: []
     };
 
@@ -25,11 +28,16 @@ class App extends Component {
     axios.get(url)
       .then((response) => {
         // handle success
-        const titles = response.data.map(data => data.title)
-        console.log(titles);
+        // const titles = response.data.map(data => data.title)
+        // console.log(titles);
         this.setState({
-          posts: data.posts
+          posts: data.posts,
+          topics : {
+            labels : data.topics.labels,
+            data : data.topics.labels,
+          }
         })
+
       })
       .catch((error) => {
         // handle error
@@ -38,7 +46,7 @@ class App extends Component {
   }
 
   handleSend = (event) => {
-    console.log("Send:", this.state.userID)
+    // console.log("Send:", this.state.userID)
     this.getPosts()
   }
 
@@ -47,10 +55,6 @@ class App extends Component {
     this.setState({
       userID: event.target.value
     })
-  }
-
-  componentDidMount() {
-    
   }
 
   render() {
@@ -62,6 +66,7 @@ class App extends Component {
           handleChange={this.handleChange}
           handleSend={this.handleSend}
           posts={this.state.posts}
+          topics={this.state.topics}
         />
       </Fragment>
     );
