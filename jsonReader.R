@@ -18,7 +18,7 @@ library(utf8)
 minimal_like <- 100
 
 # number of posts to download 
-num_post <- 250
+num_post <- 300
 
 args<-commandArgs(TRUE)
 

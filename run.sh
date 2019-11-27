@@ -1,5 +1,20 @@
 #!/bin/bash
-declare -a tags=( "volunteer" "donate" "activism" "charity" )
+declare -a tags=( #"volunteer" 
+				  #"donate"
+				  "elderlycare"
+				  "healthcare"
+				  "disability"
+
+				  #"eco"
+				  "climatechange"
+				  "environment"
+				  #"hunger" 
+				  #"education"
+				  "charity"
+				  "socialgood"
+
+				  "endangered"
+				  "endangeredspecies")
 
 
 if [ ! -d data ] 
@@ -16,6 +31,6 @@ length=${#tags[@]}
 for (( i=0; i < ${length}; i++ ))
 do
   Rscript jsonReader.R ${tags[$i]}
-  python  data_preprocess.py ${tags[$i]}
+  # python  data_preprocess.py ${tags[$i]}
 done
 
