@@ -34,8 +34,8 @@ class App extends Component {
         this.setState({
           posts: response.data.posts,
           topics : {
-            labels : response.data.topics.labels.slice(0, 6),
-            data : response.data.topics.data.slice(0, 6),
+            labels : response.data.topics.labels,
+            data : response.data.topics.data,
           }
         })
 
