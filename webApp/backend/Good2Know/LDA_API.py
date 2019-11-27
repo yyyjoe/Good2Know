@@ -10,10 +10,11 @@ import math
 import os
 import json
 import nltk
+import random
 nltk.download('wordnet')
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-NUM_TOPICS=10
+
 class NpEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, np.integer):
@@ -35,11 +36,11 @@ class LDA(object):
         self.dictionary = corpora.Dictionary.load(DIC_DIR)
 
         self.stemmer = PorterStemmer()
-        self.NUM_TOPICS=10
+        self.NUM_TOPICS=4
         
         CSV_DIR = os.path.join(BASE_DIR,"Good2Know/LDA_models/output.csv")
-        self.db = pd.read_csv(CSV_DIR)
-
+        self.db = pd.read_csv(CSV_DIR,lineterminator='\n')
+        self.db = self.db.drop_duplicates(subset=['ID','Text','Img_URL'], keep="last")
     # # Define stemmer and Process
     def lemmatize_stemming(self,text):
         return self.stemmer.stem(WordNetLemmatizer().lemmatize(text, pos='v'))
@@ -76,16 +77,19 @@ class LDA(object):
 
         data["topics"]["labels"] = list((topic_id))
         data["topics"]["data"] = list((percentage))
+
         for index, row in self.db.iterrows():
             #print(nums_of_posts[row['topic']])
-            if(nums_of_posts[row["topic"]]>0):
-                nums_of_posts[row["topic"]]-=1
+            r = random.random()
+            if(percentage[row["topic"]] > r):
                 data["posts"].append({"userID":str(row['ID']),
                                       "imgURL":str(row['Img_URL']),
                                       "text":str(row['Text']),
                                       "date":str(row['Date']),
                                       "like":str(row['Likes']),
                                      })
+        #random.sample(list,k=3)
+        data["posts"] = random.sample(data["posts"],k=12)
         data = json.dumps((data), cls=NpEncoder)
 
         return data
