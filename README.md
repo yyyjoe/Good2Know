@@ -1,4 +1,4 @@
-# Good2Know
+# [Good2Know](https://good2knowinst.github.io/)
 #### Jeff Chang, Yi-Min Chou, Chun-Jung Chien, Ting-Kuei Hu
 
 ## Introduction
@@ -7,6 +7,7 @@ As a member of a society with exploding information around, people mostly pay at
 Our program aims to benefit the whole society by diffusing socially good posts to raise people’s attention as much as possible. To be more specific, we attempt to recommend the meaningful posts to social media users so that they can have impacts on the base of their own community circle.
 
 ## Related work
+* Topic Modeling
 
 ## Proposed solution 
 1. Data cleaning and filtering: Obtain the trending post in the most recent time based on post time, numbers of comments or likes.
@@ -20,5 +21,7 @@ Our program aims to benefit the whole society by diffusing socially good posts t
 ## Conclusions and Discussion
 
 ## Reference
+* [Instagram API (R)](https://github.com/JonasSchroeder/InstaCrawlR)
+* [Instagram API (Python)](https://github.com/ping/instagram_private_api)
 
 
