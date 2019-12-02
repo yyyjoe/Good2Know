@@ -11,6 +11,7 @@ Our program aims to benefit the whole society by diffusing socially good posts t
 * Topic Modeling
   * TF/IDF
   * Bag of Words
+* Tokenization as the Initial Phase in NLP
 
 ## Proposed solution 
 1. Data cleaning and filtering: Obtain the trending post in the most recent time based on post time, numbers of comments or likes.
@@ -21,7 +22,6 @@ Our program aims to benefit the whole society by diffusing socially good posts t
 
 ## Evaluation and Analysis of Results
 * LDA Visualization
-
 
 |             |   |
 :-------------------------:|:-------------------------:
