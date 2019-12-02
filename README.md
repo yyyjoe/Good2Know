@@ -9,6 +9,8 @@ Our program aims to benefit the whole society by diffusing socially good posts t
 
 ## Related work
 * Topic Modeling
+  * TF/IDF
+  * Bag of Words
 
 ## Proposed solution 
 1. Data cleaning and filtering: Obtain the trending post in the most recent time based on post time, numbers of comments or likes.
