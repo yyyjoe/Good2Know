@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import MainFunc from './mainFunction'
 import Header from './header'
-
-import data from './dataStore'
+import Footer from './footer'
+// import data from './dataStore'
 
 const axios = require('axios');
 const url = "http://localhost:8000/Good2Know/?user_id=";
@@ -69,6 +69,7 @@ class App extends Component {
           posts={this.state.posts}
           topics={this.state.topics}
         />
+        <Footer />
       </Fragment>
     );
   }
