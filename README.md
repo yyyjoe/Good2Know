@@ -1,4 +1,5 @@
-# [Good2Know](https://good2knowinst.github.io/)
+# Good2Know 
+## [Website](https://good2knowinst.github.io/)
 #### Jeff Chang, Yi-Min Chou, Chun-Jung Chien, Ting-Kuei Hu
 
 ## Introduction
@@ -17,8 +18,17 @@ Our program aims to benefit the whole society by diffusing socially good posts t
 3. Recommendation: For each user, we first do user profiling based on their posts, and use a similarity algorithm to find out the close posts in feature space and generate recommendations based on this closeness.
 
 ## Evaluation and Analysis of Results
+* LDA Visualization
+
+
+|             |   |
+:-------------------------:|:-------------------------:
+|![](images/topic0.png)  |  ![](images/topic1.png) |
+|![](images/topic2.png)  |  ![](images/topic3.png) |
 
 ## Conclusions and Discussion
+1. We propose a social good recommender system to arouse people’s attention things that benefit the society.
+2. Our recommender system successfully forwards meaningful posts to social media users so that they can have social-good impacts on the base of their own community circle.
 
 ## Reference
 * [Instagram API (R)](https://github.com/JonasSchroeder/InstaCrawlR)
