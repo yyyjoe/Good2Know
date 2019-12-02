@@ -27,6 +27,8 @@ Our program aims to benefit the whole society by diffusing socially good posts t
 :-------------------------:|:-------------------------:
 |![](images/topic0.png)  |  ![](images/topic1.png) |
 |![](images/topic2.png)  |  ![](images/topic3.png) |
+* Web Demo
+![](images/demo.png)
 
 ## Conclusions and Discussion
 1. We propose a social good recommender system to arouse people’s attention things that benefit the society.
