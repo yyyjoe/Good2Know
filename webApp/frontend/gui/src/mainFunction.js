@@ -32,10 +32,10 @@ class MainFunction extends Component {
                                 </Button>
                             </Paper>
                         </Grid>
-                        <Grid item style={{height : "20%"}}>
+                        {/* <Grid item style={{height : "20%"}}>
                             <Paper style={{ padding: 10, marginTop: 10, marginBottom: 10, height: "80%" }}>User profile</Paper>
-                        </Grid>
-                        <Grid item style={{height : "65%"}}>
+                        </Grid> */}
+                        <Grid item style={{height : "50%"}}>
                             <Paper style={{ padding: 10, marginTop: 10, marginBottom: 10, height: "100%" }}>
                                 <Chart
                                     topics={this.props.topics}
