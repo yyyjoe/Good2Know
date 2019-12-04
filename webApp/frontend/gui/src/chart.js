@@ -62,7 +62,6 @@ class Chart extends React.Component {
     render() {
         return (
         <MDBContainer>
-            <h4 className="mt-5">Topic percentage : </h4>
             <Pie data={this.state.dataPie} options={{ responsive: true }} />
         </MDBContainer>
         );

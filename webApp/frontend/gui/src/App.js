@@ -12,6 +12,8 @@ class App extends Component {
     super(props);
     this.state = {
       userID: "",
+      isIDValid: false,
+      errorText:"",
       topics: {
         labels : [],
         data : [],
@@ -43,12 +45,20 @@ class App extends Component {
       .catch((error) => {
         // handle error
         console.log(error);
+        this.setState({
+          error : true,
+          errorText : "Invalid or Private account ID!"
+        })
       })
   }
 
   handleSend = (event) => {
     // console.log("Send:", this.state.userID)
     this.getPosts()
+    this.setState({
+      error : false,
+      errorText : ""
+    })
   }
 
   handleChange = (event) => {
@@ -68,6 +78,8 @@ class App extends Component {
           handleSend={this.handleSend}
           posts={this.state.posts}
           topics={this.state.topics}
+          text={this.state.text}
+          errorText={this.state.errorText}
         />
         <Footer />
       </Fragment>

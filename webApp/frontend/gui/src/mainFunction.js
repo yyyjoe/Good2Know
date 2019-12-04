@@ -3,6 +3,7 @@ import { Button, TextField, Paper } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import PostList from './postList'
 import Chart from './chart'
+import Typography from '@material-ui/core/Typography';
 
 const style = {
     PaperLeft: { padding: 10, marginTop: 10, marginBottom: 10, height: "100%", width : "100%" },
@@ -16,16 +17,21 @@ class MainFunction extends Component {
             <Fragment>
                 <Grid container direction="row" style={{width : "100%", height: "85%"}}>
                     <Grid container direction="column" style={{width : "29%", height: "100%"}}>
-                        <Grid item style={{height : "15%"}}>
-                            <Paper style={{ padding: 10, marginTop: 10, marginBottom: 10, height: "80%" }}>
+                        <Grid item style={{height : "20%", width : "100%"}}>
+                            <Paper style={{ width : "95%", padding: 10, marginTop: 10, marginBottom: 10, height: "100%" }}>
+                                <Typography variant="h8">
+                                    Please Enter a public Instagram ID to get posts :
+                                </Typography>
                                 <TextField
+                                    error={this.props.isIDValid}
                                     id="user_id"
                                     placeholder="Your ID"
                                     value={this.props.userID}
                                     variant="outlined"
                                     onChange={this.props.handleChange}
                                     margin="normal"
-                                    style={{ marginTop: 10, marginRight: 5 }}
+                                    style={{ marginTop: 10, marginRight: 10 }}
+                                    helperText={this.props.errorText}
                                 />
                                 <Button onClick={this.props.handleSend} variant="contained" style={{ marginTop: 10 }}>
                                     Go
@@ -35,8 +41,11 @@ class MainFunction extends Component {
                         {/* <Grid item style={{height : "20%"}}>
                             <Paper style={{ padding: 10, marginTop: 10, marginBottom: 10, height: "80%" }}>User profile</Paper>
                         </Grid> */}
-                        <Grid item style={{height : "50%"}}>
-                            <Paper style={{ padding: 10, marginTop: 10, marginBottom: 10, height: "100%" }}>
+                        <Grid item style={{height : "50%", width : "100%"}}>
+                            <Paper style={{ padding: 10, marginTop: 20, marginBottom: 10, height: "100%", width : "95%" }}>
+                                <Typography variant="h8">
+                                    Topic Percentage % : 
+                                </Typography>
                                 <Chart
                                     topics={this.props.topics}
                                 />
