@@ -19,11 +19,11 @@ class MainFunction extends Component {
                     <Grid container direction="column" style={{width : "29%", height: "100%"}}>
                         <Grid item style={{height : "20%", width : "100%"}}>
                             <Paper style={{ width : "95%", padding: 10, marginTop: 10, marginBottom: 10, height: "100%" }}>
-                                <Typography variant="h8">
+                                <Typography variant="subtitle2">
                                     Please Enter a public Instagram ID to get posts :
                                 </Typography>
                                 <TextField
-                                    error={this.props.isIDValid}
+                                    error={this.props.isIdInvalid}
                                     id="user_id"
                                     placeholder="Your ID"
                                     value={this.props.userID}
@@ -43,7 +43,7 @@ class MainFunction extends Component {
                         </Grid> */}
                         <Grid item style={{height : "50%", width : "100%"}}>
                             <Paper style={{ padding: 10, marginTop: 20, marginBottom: 10, height: "100%", width : "95%" }}>
-                                <Typography variant="h8">
+                                <Typography variant="subtitle2">
                                     Topic Percentage % : 
                                 </Typography>
                                 <Chart

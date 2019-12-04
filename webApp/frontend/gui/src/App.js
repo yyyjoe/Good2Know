@@ -12,7 +12,7 @@ class App extends Component {
     super(props);
     this.state = {
       userID: "",
-      isIDValid: false,
+      isIdInvalid: false,
       errorText:"",
       topics: {
         labels : [],
@@ -46,7 +46,7 @@ class App extends Component {
         // handle error
         console.log(error);
         this.setState({
-          error : true,
+          isIdInvalid : true,
           errorText : "Invalid or Private account ID!"
         })
       })
@@ -56,7 +56,7 @@ class App extends Component {
     // console.log("Send:", this.state.userID)
     this.getPosts()
     this.setState({
-      error : false,
+      isIdInvalid : false,
       errorText : ""
     })
   }
@@ -78,7 +78,7 @@ class App extends Component {
           handleSend={this.handleSend}
           posts={this.state.posts}
           topics={this.state.topics}
-          text={this.state.text}
+          isIdInvalid={this.state.isIdInvalid}
           errorText={this.state.errorText}
         />
         <Footer />
