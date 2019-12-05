@@ -17,8 +17,8 @@ class MainFunction extends Component {
             <Fragment>
                 <Grid container direction="row" style={{width : "100%", height: "85%"}}>
                     <Grid container direction="column" style={{width : "29%", height: "100%"}}>
-                        <Grid item style={{height : "20%", width : "100%"}}>
-                            <Paper style={{ width : "95%", padding: 10, marginTop: 10, marginBottom: 10, height: "100%" }}>
+                        <Grid item style={{width : "100%"}}>
+                            <Paper style={{ width : "95%", padding: 10, marginTop: 10, marginBottom: 10, height: "90%" }}>
                                 <Typography variant="subtitle2">
                                     Please Enter a public Instagram ID to get posts :
                                 </Typography>
@@ -37,12 +37,9 @@ class MainFunction extends Component {
                                     Go
                                 </Button>
                             </Paper>
-                        </Grid>
-                        {/* <Grid item style={{height : "20%"}}>
-                            <Paper style={{ padding: 10, marginTop: 10, marginBottom: 10, height: "80%" }}>User profile</Paper>
-                        </Grid> */}
-                        <Grid item style={{height : "50%", width : "100%"}}>
-                            <Paper style={{ padding: 10, marginTop: 20, marginBottom: 10, height: "100%", width : "95%" }}>
+                        </Grid> 
+                        <Grid item style={{width : "100%"}}>
+                            <Paper style={{ padding: 10, marginTop: 20, marginBottom: 10, height: "100%", width : "95%"}}>
                                 <Typography variant="subtitle2">
                                     Topic Percentage % : 
                                 </Typography>

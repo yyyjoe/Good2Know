@@ -23,7 +23,6 @@ const useStyles = makeStyles(theme => ({
       marginLeft: "1%"
     },
     media: {
-      height: 150,
       width: "100%",
       paddingTop: '56.25%', // 16:9
     },
@@ -69,11 +68,6 @@ export default function RecipeReviewCard({userID, date, imgURL, text, like}) {
           image={imgURL}
           title=""
         />
-        <CardContent className={classes.content}>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {text}
-          </Typography>
-        </CardContent>
         <CardActions disableSpacing>
           <IconButton aria-label="add to favorites" disabled={true}>
             <FavoriteIcon />
@@ -82,6 +76,11 @@ export default function RecipeReviewCard({userID, date, imgURL, text, like}) {
           </Typography>
           </IconButton>
         </CardActions>
+        <CardContent className={classes.content}>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {text}
+          </Typography>
+        </CardContent>
       </Card>
     );
   }

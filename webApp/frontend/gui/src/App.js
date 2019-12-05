@@ -5,7 +5,7 @@ import Footer from './footer'
 // import data from './dataStore'
 
 const axios = require('axios');
-const url = "http://localhost:8000/Good2Know/?user_id=";
+const url = "https://good2know.herokuapp.com/Good2Know/?user_id=";
 
 class App extends Component {
   constructor(props) {
@@ -47,7 +47,7 @@ class App extends Component {
         console.log(error);
         this.setState({
           isIdInvalid : true,
-          errorText : "Invalid or Private account ID!"
+          errorText : "Invalid/Private account ID"
         })
       })
   }
